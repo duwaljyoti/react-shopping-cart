@@ -1,10 +1,16 @@
 import React from "react";
 import "./Cart.css";
+import {useDispatch, useSelector} from "react-redux";
+import { cartActions } from "../store/cartslice";
+
 const Cart = () => {
-  const quantity = 5;
+  const itemListLength = useSelector(state => state.cart.totalQuantity);
+  const dispatch = useDispatch();
+  const cartOnClickHandler = () => dispatch(cartActions.setShowCart())
+
   return (
     <div className="cartIcon">
-      <h3>Cart: {quantity} Items</h3>
+      <h3 onClick={cartOnClickHandler}>Cart: {itemListLength} Items</h3>
     </div>
   );
 };

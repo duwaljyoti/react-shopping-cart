@@ -1,6 +1,7 @@
 import React from "react";
 import Cart from "./Cart";
 import "./Header.css";
+import {useSelector} from "react-redux";
 const Header = () => {
   return (
     <header>
